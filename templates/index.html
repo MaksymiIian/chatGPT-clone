@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+       <div style="color:green">
+           {{message}}
+       </div>
+    {% endfor  %}
+    {% endif %}
+{% endwith %}
+<h1>Ask Chat a question</h1>
+<form method="POST" action="{{ url_for('index') }}">
+    <input type="text" name="prompt" autocomplete="off">
+    <button type="submit">Generate response</button>
+</form>
+<p style>{{ prompt }}</p>
+<p style="font-weight:bold">{{ response }}</p>
+{% endblock %}

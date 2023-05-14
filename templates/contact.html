@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Contact us</h1>
+  <form method="POST" action="{{ url_for('contact') }}">
+    {{ form.hidden_tag() }}
+    {{ form.csrf_token }}
+    <div class="form-group">
+  {{ form.name(placeholder="Your name", class_="form-control") }}
+  {% for error in form.name.errors %}
+    <p class="form-text text-danger" style="color:red">{{ error }}</p>
+  {% endfor %}
+    </div>
+    <div class="form-group">
+  {{ form.email(placeholder="Your email", class_="form-control") }}
+  {% for error in form.email.errors %}
+    <p class="form-text text-danger" style="color:red">{{ error }}</p>
+  {% endfor %}
+    </div>
+    <br>
+    <div class="form-group" style="margin-top: -25px;">
+      {{ form.message(placeholder="Your message", rows=4, cols=60, class_="form-control") }}
+      {% for error in form.message.errors %}
+        <p class="form-text text-danger" style="color:red">{{ error }}</p>
+      {% endfor %}
+    </div>
+    <p>
+       <button type="submit">Send message</button>
+    </p>
+  </form>
+{% endblock %}

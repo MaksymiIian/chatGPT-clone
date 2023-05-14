@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Account Information</h1>
+    <p>Welcome, {{ session['username'] }}</p>
+    {% if responses_count > 1 %}
+    <p>You have already asked {{ responses_count }}  questions, you are doing great!</p>
+    {% else %}
+    <p>You have already asked {{ responses_count }}  question, you are doing great!</p>
+    {% endif %}
+{% endblock %}
