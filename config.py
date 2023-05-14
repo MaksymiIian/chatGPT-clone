@@ -1,0 +1,10 @@
+SQLALCHEMY_DATABASE_URI = '#Database URI'
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+SECRET_KEY = "#Your secret key"
+SESSION_TYPE = 'filesystem'
+MAIL_SERVER = '#Your mail server'
+MAIL_PORT = 465
+MAIL_USE_SSL = True
+MAIL_USERNAME = '#Your mail address'
+MAIL_PASSWORD = '#Your mail password'
+MAIL_DEFAULT_SENDER = '#Your mail address'
